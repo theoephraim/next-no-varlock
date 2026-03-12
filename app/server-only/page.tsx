@@ -1,7 +1,10 @@
 export const dynamic = "force-dynamic";
 
 export default function ServerOnlyPage() {
-  console.log("SERVER_ONLY_VAR =", process.env.SERVER_ONLY_VAR);
+  console.log("Env vars", {
+    VAR_FROM_ENV: process.env.VAR_FROM_ENV,
+    VAR_FROM_UI: process.env.VAR_FROM_UI,
+  });
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
@@ -10,6 +13,7 @@ export default function ServerOnlyPage() {
           <h1 className="text-2xl font-bold mb-4">Server Only Page</h1>
           <ul>
             <li>VAR_FROM_ENV = {process.env.VAR_FROM_ENV}</li>
+            <li>VAR_FROM_UI = {process.env.VAR_FROM_UI}</li>
           </ul>
         </div>
       </main>
